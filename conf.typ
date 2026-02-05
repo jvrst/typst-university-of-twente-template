@@ -44,9 +44,13 @@ Mathematics and Computer Science,
 
   show link: it => text(fill: blue, it)
 
-  show figure.caption: it => text(size: 0.9em)[
-    #smallcaps[#it.supplement #it.counter.display(it.numbering):] #it.body
-  ]
+  show figure.caption: it => context {
+    text(size: 0.9em)[
+      #smallcaps[
+        #it.supplement #it.counter.display(it.numbering):
+      ] #it.body
+    ]
+  }
 
   set math.equation(numbering: "(1)")
 
