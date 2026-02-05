@@ -1,6 +1,6 @@
 // UTwente MSc Computer Science Template
 // Converted from mcs.sty LaTeX package
-// Version: 2023/02/06 v.01 for UTwente MSc Computer Science: Research Topics + Final Project
+// https://www.overleaf.com/latex/templates/template-for-the-msc-computer-science-research-topics-or-final-project-university-of-twente/njhdgsjfkxfd
 
 #let conf(
   study: "MSc Business & IT",
@@ -9,6 +9,7 @@
   supervisor: "",
   doctype: "",
   date: datetime.today(),
+  bibliography_style: "ieee",
   department: "Department of Computer Science
 Faculty of Electrical Engineering,
 Mathematics and Computer Science,
@@ -41,18 +42,15 @@ Mathematics and Computer Science,
 
   set heading(numbering: "1.1")
 
-  // Link styling (equivalent to hyperref colorlinks)
   show link: it => text(fill: blue, it)
 
   show figure.caption: it => text(size: 0.9em)[
     #smallcaps[#it.supplement #it.counter.display(it.numbering):] #it.body
   ]
 
-  // Math settings
   set math.equation(numbering: "(1)")
 
-  // Bibliography style (plainurl equivalent)
-  set bibliography(style: "chicago-author-date")
+  set bibliography(style: bibliography_style)
 
   // Custom date formatting function
   let format-date(date) = {
@@ -128,7 +126,6 @@ Mathematics and Computer Science,
     ]
   }
 
-  // Generate cover page
   make-cover-page()
 
   // Reset page numbering for main content
@@ -145,3 +142,4 @@ Mathematics and Computer Science,
     #emph[Keywords:] #content
   ]
 }
+
